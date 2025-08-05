@@ -17,6 +17,9 @@ public class Gryffindor extends Hogwarts {
     }
 
     public void setNobility(int nobility) {
+        if (isCharacterTrait(nobility)) {
+            throw new IllegalArgumentException("Введите корректное значение свойство Благородство");
+        }
         this.nobility = nobility;
     }
 
@@ -25,6 +28,9 @@ public class Gryffindor extends Hogwarts {
     }
 
     public void setHonor(int honor) {
+        if (isCharacterTrait(honor)) {
+            throw new IllegalArgumentException("Введите корректное значение свойство Честь");
+        }
         this.honor = honor;
     }
 
@@ -33,6 +39,9 @@ public class Gryffindor extends Hogwarts {
     }
 
     public void setCourage(int courage) {
+        if (isCharacterTrait(courage)) {
+            throw new IllegalArgumentException("Введите корректное значение свойство Храбрость");
+        }
         this.courage = courage;
     }
 
@@ -51,7 +60,7 @@ public class Gryffindor extends Hogwarts {
 
     @Override
     public String toString() {
-        return "Гриффиндор: Благородство: " + nobility +
+        return super.toString() + ". Факультет Гриффиндор: Благородство: " + nobility +
                 " Честь: " + honor +
                 " Храбрость: " + courage;
     }

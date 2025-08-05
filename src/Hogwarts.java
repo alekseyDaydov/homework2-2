@@ -1,19 +1,25 @@
 import java.util.Objects;
 
-public abstract class Hogwarts {
+public class Hogwarts {
     private String firstName;
     private String lastName;
     private int conjure; // колдовать
     private int lustForPower; // жажда власти.
 
     public Hogwarts(String firstName, String lastName, int conjure, int lustForPower) {
+        if (isCharacterTrait(conjure) || isCharacterTrait(lustForPower)) {
+            throw new IllegalArgumentException("Введите корректное значение свойства от 0 до 100");
+        }
+        if (firstName == null || lastName == null) {
+            throw new IllegalArgumentException("Поле Имя или Фималия не должно быть пустыми");
+        }
         this.firstName = firstName;
         this.lastName = lastName;
         this.conjure = conjure;
         this.lustForPower = lustForPower;
     }
 
-    private boolean isCharacterTrait(int number) {
+    protected boolean isCharacterTrait(int number) {
         return (number >= 0 && number <= 100);
     }
 

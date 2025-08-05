@@ -8,6 +8,9 @@ public class Hufflepuff extends Hogwarts {
 
     public Hufflepuff(String firstName, String lastName, int conjure, int lustForPower, int honest, int hardworking, int loyal) {
         super(firstName, lastName, conjure, lustForPower);
+        if (isCharacterTrait(honest) || isCharacterTrait(hardworking) || isCharacterTrait(loyal)) {
+            throw new IllegalArgumentException("Введите корректное значение свойства от 0 до 100");
+        }
         this.honest = honest;
         this.hardworking = hardworking;
         this.loyal = loyal;
@@ -18,6 +21,9 @@ public class Hufflepuff extends Hogwarts {
     }
 
     public void setHardworking(int hardworking) {
+        if (isCharacterTrait(hardworking)) {
+            throw new IllegalArgumentException("Введите корректное значение свойство Трудолюбивы");
+        }
         this.hardworking = hardworking;
     }
 
@@ -26,6 +32,9 @@ public class Hufflepuff extends Hogwarts {
     }
 
     public void setLoyal(int loyal) {
+        if (isCharacterTrait(loyal)) {
+            throw new IllegalArgumentException("Введите корректное значение свойство Верны");
+        }
         this.loyal = loyal;
     }
 
@@ -34,6 +43,9 @@ public class Hufflepuff extends Hogwarts {
     }
 
     public void setHonest(int honest) {
+        if (isCharacterTrait(honest)) {
+            throw new IllegalArgumentException("Введите корректное значение свойство Честны");
+        }
         this.honest = honest;
     }
 
@@ -52,7 +64,7 @@ public class Hufflepuff extends Hogwarts {
 
     @Override
     public String toString() {
-        return "Пуффендуй: Трудолюбивы: " + hardworking +
+        return super.toString() +  ". Факультет  Пуффендуй: Трудолюбивы: " + hardworking +
                 " Верны" + loyal +
                 " Честны=" + honest;
     }
