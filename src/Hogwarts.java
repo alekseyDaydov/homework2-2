@@ -20,7 +20,7 @@ public class Hogwarts {
     }
 
     protected boolean isCharacterTrait(int number) {
-        return (number >= 0 && number <= 100);
+        return (number < 0 || number > 100);
     }
 
     public int getConjure() {

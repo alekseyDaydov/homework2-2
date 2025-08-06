@@ -76,7 +76,7 @@ public class Kogtevran extends Hogwarts {
 
     @Override
     public String toString() {
-        return super.toString() +  ". Факультет Когтевранцы : Умны " + smart +
+        return super.toString() + ". Факультет Когтевранцы : Умны " + smart +
                 " Мудры " + wise +
                 " Остроумны " + witty +
                 " Полны творчества " + fullOfCreativity;
